@@ -1,4 +1,5 @@
 from Controlador import Controlador
 
-obj_conterolador = Controlador()
-obj_conterolador.tomar_numero()
+if __name__ == "__main__":
+    obj_controlador = Controlador()
+    obj_controlador.iniciar()
