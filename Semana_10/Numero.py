@@ -1,7 +1,6 @@
-
 class Numero:
-    def __init__(self, dato_numero):
-        self.numero= dato_numero
+    def __init__(self, dato_numero=0):
+        self.dato_numero = dato_numero
         
     def set_numero(self, nuevo_numero):
         self.dato_numero = nuevo_numero
@@ -9,25 +8,21 @@ class Numero:
     def get_numero(self):
         return self.dato_numero
     
-    def validar_paridad(self):
-        if self.dato_numero % 2 == 0:
-            return "Es par"
-        else:
-            return "Es impar"
-
-    def validar_tipo(self):
-        if self.dato_numero > 0:
-            return "Es positivo"
-        elif self.dato_numero < 0:
-            return "Es negativo"
-        else:
-            return "Es neutro (cero)"
-    
-    def imprimir_numero(self):
-        numero = self.obj_numero.get_numero()
+    # IMPORTANTE: Agregar 'self' y 'dato_numero' como pide el UML
+    def validar_numero(self, dato_numero):
+        # Lógica de paridad
+        paridad = "par" if dato_numero % 2 == 0 else "impar"
         
-        #imprime el número (faltaba esto)
-        self.obj_vista.imprimir_numero(numero)
+        # Lógica de tipo (positivo/negativo/neutro)
+        if dato_numero > 0:
+            tipo = "positivo"
+        elif dato_numero < 0:
+            tipo = "negativo"
+        else:
+            tipo = "neutro"
+            
+        return f"Es {paridad} y {tipo}"
+    
         
         #imprime validación
         resultado = self.obj_numero.validar_numero(numero)
